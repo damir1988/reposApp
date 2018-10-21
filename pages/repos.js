@@ -15,44 +15,44 @@ const Repos = withRouter((props) => (
             </div>
         </div>
         <div className="row">
-            <div className="col-md-8 col-md-offset-2">
+            <div className="col-md-8 col-md-offset-2 getuser-container-column">
                 <ul className="repositoriesList">
                     <li>
                         <div className="row">
-                            <div className="col-sm-2">
+                            <div className="col-sm-2 col-xs-4">
                                 <strong>Repository owner:</strong>
                             </div>
-                            <div className="col-md-10">
+                            <div className="col-md-10 col-xs-8">
                                 <p className={"repository-desc"}>{props.repoInfo.owner.login}</p>
                             </div>
                         </div>
                     </li>
                     <li>
                         <div className="row">
-                            <div className="col-sm-2">
+                            <div className="col-sm-2 col-xs-4">
                                 <strong>Repository name:</strong>
                             </div>
-                            <div className="col-md-10">
+                            <div className="col-md-10 col-xs-8">
                                 <p className={"repository-desc"}>{props.repoInfo.name}</p>
                             </div>
                         </div>
                     </li>
                     <li>
                         <div className="row">
-                            <div className="col-sm-2">
+                            <div className="col-sm-2 col-xs-4">
                                 <strong>Description:</strong>
                             </div>
-                            <div className="col-md-10">
+                            <div className="col-md-10 col-xs-8">
                                 <p className={"repository-desc"}>{props.repoInfo.description}</p>
                             </div>
                         </div>
                     </li>
                     <li>
                         <div className="row">
-                            <div className="col-sm-2">
+                            <div className="col-sm-2 col-xs-4">
                                 <strong>URL:</strong>
                             </div>
-                            <div className="col-md-10">
+                            <div className="col-md-10 col-xs-8">
                                 <Link href={props.repoInfo.html_url}>
                                     <a>{props.repoInfo.html_url}</a>
                                 </Link>
@@ -68,7 +68,6 @@ const Repos = withRouter((props) => (
 Repos.getInitialProps = async function (context) {
     const { title, username } = context.query
     const repoInfo = await getReposDetails(username, title);
-    console.log(repoInfo);
     return { repoInfo }
 }
 

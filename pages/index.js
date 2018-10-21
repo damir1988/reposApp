@@ -35,7 +35,7 @@ class Index extends React.Component{
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-md-6 col-md-offset-3">
+                    <div className="col-md-6 col-md-offset-3 col-xs-12">
                         <div className="getuser-container text-center">
                             <p>Enter username to get users <strong>public repositories</strong> on github.</p>
                             <input type="text" name={"username"} id={"username"} className={"form-control text-center"} onChange={(e) => this.setUserName(e.target.value)} />
