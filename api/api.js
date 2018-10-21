@@ -1,14 +1,17 @@
 import fetch from 'isomorphic-unfetch'
-var url = "https://api.github.com/users/";
+var urlRepos = "https://api.github.com/users/";
+var urlRepo = "https://api.github.com/repos/";
 
 export async function getAllRepos(username) {
-    console.log(username);
-    const res = await fetch(url + username + '/repos');
+    const res = await fetch(urlRepos + username + '/repos');
     const data = await res.json()
 
-    console.log(data)
+    return data;
+}
 
-    return {
-        shows: data
-    }
+export async function getReposDetails(username, title) {
+    const res = await fetch(urlRepo + username + '/' + title);
+    const data = await res.json()
+    console.log(data);
+    return data;
 }
